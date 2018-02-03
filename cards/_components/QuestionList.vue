@@ -1,5 +1,5 @@
 <template>
-  <div class="questions date-list">
+  <div id="questions" class="questions date-list card-scroll__wrapper">
     <div
       v-for="day in questionDays"
       :key="day.date">
@@ -69,7 +69,6 @@ export default {
   min-height: 100px;
   flex: 1;
   overflow-y: auto;
-  margin-top: 18px;
   max-height: 100%;
   position: relative;
 

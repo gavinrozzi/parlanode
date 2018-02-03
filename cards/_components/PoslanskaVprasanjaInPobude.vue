@@ -1,7 +1,7 @@
 <template>
   <card-wrapper
     :id="$root.$options.cardData.cardData._id"
-    content-class="full"
+    content-class="full card-scroll"
     :card-url="cardUrl"
     :header-config="headerConfig">
 
@@ -12,7 +12,7 @@
         <p class="info-text">Nabor poslanskih vprašanj pridobimo s spletnega mesta <a href="https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje" target="_blank" class="funblue-light-hover">DZ RS</a>.</p>
     </div>
 
-    <div class="filters">
+    <div :class="{ 'filters': true, 'filters--shadow': card.shouldShadow }">
       <div class="filter tag-dropdown">
         <div class="filter-label">Poslanec/-ka</div>
           <p-search-dropdown :items="dropdownItems.MPs" :placeholder="MPsPlaceholder" />
@@ -39,6 +39,7 @@
 import { capitalize } from 'lodash';
 import generateMonths from 'helpers/generateMonths';
 import common from 'mixins/common';
+import scroll from 'mixins/scroll';
 import { partyOverview } from 'mixins/contextUrls';
 import { partyTitle } from 'mixins/titles';
 
@@ -48,7 +49,7 @@ import QuestionList from 'components/QuestionList.vue';
 
 export default {
   components: { CardWrapper, PSearchDropdown, QuestionList },
-  mixins: [common, partyOverview, partyTitle],
+  mixins: [common,scroll, partyOverview, partyTitle],
   computed: {
     MPsPlaceholder() {
       return this.selectedMPs.length > 0 ? `Izbranih: ${this.selectedMPs.length}` : 'Izberi';
@@ -220,6 +221,12 @@ export default {
         .filter(filterDates);
     },
   },
+  mounted() {
+    this.card.shadowElement = 'questions';
+    if (document) {
+      document.getElementById(this.card.shadowElement).addEventListener('scroll', this.checkScrollPosition);
+    }
+  },
   props: {
     cardData: {
       type: Object,
@@ -238,7 +245,16 @@ export default {
 
 <style lang="scss">
 @import '~parlassets/scss/breakpoints';
+.card-scroll__wrapper {
+  margin: 0;
 
+  .date {
+    padding: 10px 20px;
+  }
+  ul {
+    margin: 0 20px !important;
+  }
+}
 .card-content-front {
   display: flex;
   flex-direction: column;
