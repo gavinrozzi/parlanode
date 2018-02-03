@@ -80,6 +80,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
 
   import generateMonths from 'helpers/generateMonths';
   import common from 'mixins/common';
+  import scroll from 'mixins/scroll';
 
   import axios from 'axios';
 
@@ -94,9 +95,8 @@ import SearchDropdown from 'components/SearchDropdown.vue';
       SearchDropdown,
       Govor
     },
-    mixins: [common],
+    mixins: [common, scroll],
     data() {
-      console.log(this.party);
       let textFilter = '';
       let allMonths = generateMonths();
       let allPeople = [];
@@ -104,18 +104,6 @@ import SearchDropdown from 'components/SearchDropdown.vue';
       const arrayColumn = (arr, n) => arr.map(x => x[n]);
 
       let highlightingSession = arrayColumn(this.cardData.data.highlighting, 'session');
-      let highlightingOrgs = [].concat.apply([], arrayColumn(highlightingSession, 'orgs'));
-      // let allSessions = highlightingOrgs.map(
-      //   org => ({
-      //     id: org.id,
-      //     label: org.name,
-      //     selected: false
-      //   })
-      // );
-
-      // allSessions = allSessions.map(JSON.stringify).reverse().filter(function(e, i, a) {
-      //   return a.indexOf(e, i + 1) === -1;
-      // }).reverse().map(JSON.parse)
 
       const allSessions = this.cardData.data.organizations.map((org) => {
         return {
@@ -126,20 +114,15 @@ import SearchDropdown from 'components/SearchDropdown.vue';
       });
 
       return {
-        card: {
-          currentPage: 0,
-          isLoading: false,
-          lockLoading: false,
-          shouldShadow: false
-        },
         cardMethod: this.cardData.cardData.method,
         cardGroup: this.cardData.cardData.group,
-        speakingDays: this.cardData.data.highlighting,
+        speakingDays: [],// this.cardData.data.highlighting,
         textFilter,
         allMonths,
         allSessions,
         allPeople,
       };
+
     },
     created() {
       if (this.type === 'party') {
@@ -154,23 +137,24 @@ import SearchDropdown from 'components/SearchDropdown.vue';
 
             return newPerson;
           });
-
-          // console.log(allPeople);
-          // console.log(allMonths);
         });
       }
     },
     mounted() {
-      // document.getElementById('speaks').addEventListener('scroll', this.checkScrollPosition)
+      console.log(this.card)
+      this.card.shadowElement = 'speaks';
+      if (document) {
+        document.getElementById(this.card.shadowElement).addEventListener('scroll', this.checkScrollPosition);
+      }
     },
     computed: {
       shareUrl() {
         const state = {}
         if (this.type === 'person') {
-            state.people = this.cardData.parlaState.person;
+          state.people = this.cardData.parlaState.person;
 
         } else if (this.type === 'party') {
-            state.parties = this.cardData.parlaState.parties;
+          state.parties = this.cardData.parlaState.parties;
         }
 
         if (this.selectedMonths.length > 0) {
@@ -200,10 +184,10 @@ import SearchDropdown from 'components/SearchDropdown.vue';
 
         const state = {}
         if (this.type === 'person') {
-            state.people = this.cardData.parlaState.person;
+          state.people = this.cardData.parlaState.person;
 
         } else if (this.type === 'party') {
-            state.parties = this.cardData.parlaState.parties;
+          state.parties = this.cardData.parlaState.parties;
         }
 
         if (this.selectedMonths.length > 0) {
@@ -267,7 +251,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
 
       groupSpeakingDays() {
         return this.speakingDays
-          .reduce(function(r, a) {
+          .reduce(function (r, a) {
             r[a.session_id] = r[a.session_id] || [];
             r[a.session_id].push(a);
             return r;
@@ -311,7 +295,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
         axios.get(this.cardUrl).then(response => {
           this.speakingDays = this.speakingDays.concat(response.data.highlighting)
 
-            this.card.isLoading = false;
+          this.card.isLoading = false;
 
           // end infinite scrolling
           if (response.data.response.start >= response.data.response.numFound) {
@@ -321,42 +305,21 @@ import SearchDropdown from 'components/SearchDropdown.vue';
 
         });
       },
-      checkScrollPosition() {
-        if (!this.card.lockLoading) {
-          this.card.lockLoading = true;
-          setTimeout(() => {
-            if (document) {
-              this.card.shouldShadow = document.getElementById('speaks').scrollTop > 0;
-            }
-            this.card.lockLoading = false;
-
-                    }, 200)
-                }
-            },
-            measurePiwik(filter, sort, order) {
-                if (typeof measure === 'function') {
-                    if (sort !== '') {
-                        measure('s', 'session-sort', `${sort} ${order}`, '');
-                    } else if (filter !== '') {
-                        measure('s', 'session-filter', filter, '');
-                    }
-                }
-            }
-        },
-        props: {
-            cardData: {
-                type: Object,
-                required: true,
-            },
-            type: {
-                type: String,
-                required: true,
-                validator: value => ['person', 'party'].indexOf(value) > -1,
-            },
-            person: Object,
-            party: Object,
-        }
-    };
+    },
+    props: {
+      cardData: {
+        type: Object,
+        required: true,
+      },
+      type: {
+        type: String,
+        required: true,
+        validator: value => ['person', 'party'].indexOf(value) > -1,
+      },
+      person: Object,
+      party: Object,
+    }
+  };
 </script>
 
 <style lang="scss" scoped>
@@ -364,6 +327,10 @@ import SearchDropdown from 'components/SearchDropdown.vue';
     @import '~parlassets/scss/colors';
     .card-scroll__wrapper--empty {
       height: auto;
+    }
+
+    .card-scroll__wrapper {
+        margin: 0;
     }
 
     .card-scroll {
