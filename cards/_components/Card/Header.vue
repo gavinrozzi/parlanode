@@ -1,5 +1,5 @@
 <template>
-  <div class="card-header">
+  <div :class="getHeaderClass">
     <template v-if="config.alternative">
       <div class="alt-header-container">
         <div class="alt-header">
@@ -47,6 +47,13 @@ export default {
       }
       return CARD_TITLES[this.currentBack];
     },
+    getHeaderClass() {
+      let css = {'card-header': true};
+      if (typeof this.config.headerClass !== 'undefined') {
+        css[this.config.headerClass] = this.config.headerClassApply;
+      }
+      return css;
+    }
   },
 };
 </script>

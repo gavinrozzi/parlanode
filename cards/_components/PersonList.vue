@@ -1,5 +1,5 @@
 <template>
-  <ul class="person-list">
+  <ul id="people" class="person-list">
     <li
       v-for="person in people"
       :key="person.gov_id"
