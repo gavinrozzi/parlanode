@@ -168,7 +168,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      return `https://glej.parlameter.si/s/glasovanje/${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
+      return `https://glej.uk.parlameter.si/s/glasovanje/${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
     },
   },
   methods: {

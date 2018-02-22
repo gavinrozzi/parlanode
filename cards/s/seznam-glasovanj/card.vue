@@ -196,7 +196,7 @@
         if (this.textFilter.length > 0) state.text = this.textFilter;
         if (this.selectedResults.length > 0) state.results = this.selectedResults;
 
-        return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.session.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+        return `https://glej.uk.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.session.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
       filteredVotes() {
         return this.getFilteredVotes();

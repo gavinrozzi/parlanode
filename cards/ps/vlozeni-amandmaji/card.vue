@@ -183,7 +183,7 @@
         if (this.selectedVoteTypes.length > 0) state.voteTypes = this.selectedVoteTypes;
         if (this.textFilter.length > 0) state.text = this.textFilter;
 
-        return `https://glej.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+        return `https://glej.uk.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.party.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
       filteredVotingDays() {
         return this.getFilteredVotingDays();

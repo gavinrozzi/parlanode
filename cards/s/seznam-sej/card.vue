@@ -180,7 +180,7 @@ export default {
       if (this.currentWorkingBodies.length > 0) params.workingBodies = this.currentWorkingBodies;
       if (this.justFive) params.justFive = true;
 
-      return `https://glej.parlameter.si/s/seznam-sej/?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
+      return `https://glej.uk.parlameter.si/s/seznam-sej/?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
     },
     infoText() {
       const filterText = `${this.currentFilter}${this.currentWorkingBodies.length > 0 ? ': ' : ''}`;
@@ -226,7 +226,7 @@ export default {
       this.measurePiwik(filter, '', '');
     },
     getWorkingBodyUrl(workingBodyId) {
-      return `https://glej.parlameter.si/wb/getWorkingBodies/${workingBodyId}?frame=true&altHeader=true`;
+      return `https://glej.uk.parlameter.si/wb/getWorkingBodies/${workingBodyId}?frame=true&altHeader=true`;
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure !== 'function') return;

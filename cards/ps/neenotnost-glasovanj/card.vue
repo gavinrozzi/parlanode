@@ -32,7 +32,7 @@ Neenotnost izbrane poslanske skupine na glasovanjih sej Državnega zbora v prime
       return { sessions: this.$options.cardData.data.result }
     },
     generatedCardUrl() {
-      return `https://glej.parlameter.si/ps/neenotnost-glasovanj/${this.$options.cardData.data.organization.id}?state={}`
+      return `https://glej.uk.parlameter.si/ps/neenotnost-glasovanj/${this.$options.cardData.data.organization.id}?state={}`
     }
   },
   methods: {

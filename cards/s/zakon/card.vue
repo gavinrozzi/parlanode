@@ -152,7 +152,7 @@ export default {
       return '';
     },
     generatedCardUrl() {
-      return `https://glej.parlameter.si/s/zakon/?customUrl=${encodeURIComponent('https://analize.uk.parlameter.si/v1/s/getLegislation/' + this.data.epa)}&state=${encodeURIComponent(JSON.stringify({startTab: this.startTab}))}`;
+      return `https://glej.uk.parlameter.si/s/zakon/?customUrl=${encodeURIComponent('https://analize.uk.parlameter.si/v1/s/getLegislation/' + this.data.epa)}&state=${encodeURIComponent(JSON.stringify({startTab: this.startTab}))}`;
     },
   },
   methods: {

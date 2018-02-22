@@ -332,7 +332,7 @@
         }
 
 
-        return `https://glej.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+        return `https://glej.uk.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
     },
     mounted() {

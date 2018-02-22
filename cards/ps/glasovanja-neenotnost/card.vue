@@ -45,7 +45,7 @@
     <div :class="['results', {'is-loading': loading }]">
       <template v-for="day in filteredVotingDays">
         <date-row v-if="selectedSort === 'date'" :date="day.date" />
-        <a target="_blank" :href="'https://glej.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
+        <a target="_blank" :href="'https://glej.uk.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
           <div class="disunion">
             <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
             <div class="text">neenotnost</div>

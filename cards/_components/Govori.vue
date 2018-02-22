@@ -192,9 +192,9 @@ import SearchDropdown from 'components/SearchDropdown.vue';
         state.textFilter = this.textFilter.length ? this.textFilter : '*';
 
         if (this.type === 'person') {
-          return `https://glej.parlameter.si/p/govori/${this.cardData.parlaState.person}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`
+          return `https://glej.uk.parlameter.si/p/govori/${this.cardData.parlaState.person}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`
         }
-        return `https://glej.parlameter.si/ps/govori/${this.cardData.parlaState.parties}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`
+        return `https://glej.uk.parlameter.si/ps/govori/${this.cardData.parlaState.parties}?state=${JSON.stringify(state)}&customUrl=${encodeURIComponent(this.cardUrl)}`
       },
       cardUrl() {
 
