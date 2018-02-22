@@ -116,7 +116,7 @@ export default {
       let sortedAndFiltered = this.sessions
         .filter((session) => {
           if (this.currentFilter === 'Seje DZ') {
-            return session.orgs.filter(org => org.id === 95).length > 0;
+            return session.orgs.filter(org => org.id === 11).length > 0;
           } else if (this.currentFilter === 'Seje kolegija predsednika DZ') {
             return session.orgs.filter(org => org.id === 9).length > 0;
           } else if (this.currentFilter === 'Seje delovnih teles') {
@@ -209,7 +209,7 @@ export default {
   },
   methods: {
     organisationIsWorkingBody(organisationId) {
-      return [9, 95].indexOf(organisationId) === -1;
+      return [11].indexOf(organisationId) === -1;
     },
     selectSort(sortId) {
       if (this.currentSort === sortId) {
