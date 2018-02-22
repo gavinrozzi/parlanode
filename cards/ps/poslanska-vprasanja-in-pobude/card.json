@@ -1,7 +1,7 @@
 {
   "_id": "ps_poslanska_vprasanja_in_pobude",
   "name": "Poslanska vprašanja in pobude",
-  "dataUrl": "https://analize.parlameter.si/v1/pg/getQuestionsOfPG",
+  "dataUrl": "https://analize.uk.parlameter.si/v1/pg/getQuestionsOfPG",
   "type": "poslanska_skupina",
   "lastUpdate": "2018-01-09T13:58:34.969Z",
   "method": "poslanska-vprasanja-in-pobude",

@@ -259,7 +259,7 @@
         return this.getFilteredVotes();
       },
       queryUrl() {
-        const base = 'https://analize.parlameter.si/v1/s/getComparedVotes/'
+        const base = 'https://analize.uk.parlameter.si/v1/s/getComparedVotes/'
         // const base = 'http://127.0.0.1:8000/v1/s/getComparedVotes/';
         if (this.special) {
           return base + '?people_same=' + this.selectedSamePeople.map(person => person.id).toString() + '&parties_same=' +
@@ -338,7 +338,7 @@
     mounted() {
       const self = this;
       const PGPromise = $.ajax({
-        url: 'https://data.parlameter.si/v1/getAllPGs/',
+        url: 'https://data.uk.parlameter.si/v1/getAllPGs/',
         method: 'GET',
         success: (data) => {
           const sameParties = this.$options.cardData.parlaState.sameParties || [];
@@ -357,7 +357,7 @@
         },
       });
       const peoplePromise = $.ajax({
-        url: 'https://data.parlameter.si/v1/getMPs/',
+        url: 'https://data.uk.parlameter.si/v1/getMPs/',
         method: 'GET',
         success: (data) => {
           const samePeople = this.$options.cardData.parlaState.samePeople || [];

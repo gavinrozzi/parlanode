@@ -8,7 +8,7 @@ module.exports = {
     password: `${process.env.MONGO_PASSWORD}`,
   },
   urls            : {
-    analize : 'https://analize.uk.parlameter.si', // DATA URL BASE
+    analize : 'https://analize.uk.parlameter.si.si', // DATA URL BASE
   },
   apiPrefix       : '/api',
   ogCapturePath   : '/home/parlauser/parlassets/og_cards',

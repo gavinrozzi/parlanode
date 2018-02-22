@@ -198,7 +198,7 @@ export default {
     },
   },
   created() {
-    $.getJSON('https://analize.parlameter.si/v1/s/getWorkingBodies/', (response) => {
+    $.getJSON('https://analize.uk.parlameter.si/v1/s/getWorkingBodies/', (response) => {
       const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
       this.workingBodies = response.map(workingBody => ({
         id: workingBody.id,

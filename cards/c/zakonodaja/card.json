@@ -1,7 +1,7 @@
 {
   "_id": "zakonodaja",
   "name": "Seznam zakonodaje",
-  "dataUrl": "http://analize.parlameter.si/v1/s/getAllLegislation",
+  "dataUrl": "http://analize.uk.parlameter.si/v1/s/getAllLegislation",
   "type": "empty",
   "lastUpdate": "2018-01-09T10:37:24.554Z",
   "method": "zakonodaja",

@@ -143,7 +143,7 @@ import SearchDropdown from 'components/SearchDropdown.vue';
     },
     created() {
       if (this.type === 'party') {
-        axios.get(`https://analize.parlameter.si/v1/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then(response => {
+        axios.get(`https://analize.uk.parlameter.si/v1/pg/getMPsOfPG/${this.cardData.data.filters.parties[0]}`).then(response => {
           this.allPeople = response.data.results.map((person) => {
             const newPerson = {
               id: person.id,

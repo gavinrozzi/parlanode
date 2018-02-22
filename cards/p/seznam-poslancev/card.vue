@@ -350,7 +350,7 @@ export default {
   },
   created() {
     const that = this;
-    $.getJSON('https://analize.parlameter.si/v1/pg/getListOfPGs/', (response) => {
+    $.getJSON('https://analize.uk.parlameter.si/v1/pg/getListOfPGs/', (response) => {
       that.parties = response.data.map(party => ({
         acronym: party.party.acronym,
         color: party.party.acronym.toLowerCase().replace(/ /g, '_'),

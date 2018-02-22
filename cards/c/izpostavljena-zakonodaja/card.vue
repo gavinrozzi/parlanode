@@ -98,7 +98,7 @@
     },
     computed: {
       generatedCardUrl() {
-        return `https://glej.parlameter.si/c/izpostavljena-zakonodaja/?customUrl=${encodeURIComponent('https://analize.parlameter.si/v1/s/getExposedLegislation/')}&state=${encodeURIComponent(JSON.stringify({selectedTab: this.selectedTab}))}`;
+        return `https://glej.parlameter.si/c/izpostavljena-zakonodaja/?customUrl=${encodeURIComponent('https://analize.uk.parlameter.si/v1/s/getExposedLegislation/')}&state=${encodeURIComponent(JSON.stringify({selectedTab: this.selectedTab}))}`;
       },
     },
   };

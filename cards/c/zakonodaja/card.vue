@@ -132,7 +132,7 @@
         // @todo probably needs a good fix
         if (this.selectedWorkingBodies.length) state.wb = this.selectedWorkingBodies;
 
-        return `https://glej.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent('https://analize.parlameter.si/v1/s/getAllLegislation/')}`;
+        return `https://glej.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent('https://analize.uk.parlameter.si/v1/s/getAllLegislation/')}`;
       },
       processedData () {
         const filterLegislation = (legislation) => {

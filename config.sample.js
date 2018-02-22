@@ -12,7 +12,7 @@ const sample = {
     password: `${process.env.MONGO_PASSWORD}`, // or password in plaintext
   },
   urls: {
-    analize: 'https://analize.parlameter.si/', // DATA URL BASE
+    analize: 'https://analize.uk.parlameter.si/', // DATA URL BASE
   },
   apiPrefix: '/api',
   ogCapturePath: './og',
