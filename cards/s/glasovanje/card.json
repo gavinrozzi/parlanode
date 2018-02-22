@@ -1,7 +1,7 @@
 {
   "_id": "s_glasovanje",
   "name": "Glasovanje",
-  "dataUrl": "https://analize.uk.parlameter.si/v1/s/getMotionAnalize",
+  "dataUrl": "http://analize.uk.parlameter.si/v1/s/getMotionAnalize",
   "type": "glasovanje",
   "lastUpdate": "2018-01-09T14:05:51.155Z",
   "method": "glasovanje",

@@ -259,7 +259,7 @@
         return this.getFilteredVotes();
       },
       queryUrl() {
-        const base = 'https://analize.uk.parlameter.si/v1/s/getComparedVotes/'
+        const base = 'http://analize.uk.parlameter.si/v1/s/getComparedVotes/'
         // const base = 'http://127.0.0.1:8000/v1/s/getComparedVotes/';
         if (this.special) {
           return base + '?people_same=' + this.selectedSamePeople.map(person => person.id).toString() + '&parties_same=' +
@@ -276,7 +276,7 @@
           const v = JSON.parse(JSON.stringify(e));
           const allInVotes = v.results.votes_for + v.results.against +
             v.results.abstain + v.results.not_present;
-          v.url = `https://parlameter.si/seja/glasovanje/${e.session.id}/${e.results.motion_id}`;
+          v.url = `http://uk.parlameter.si/seja/glasovanje/${e.session.id}/${e.results.motion_id}`;
           v.accepted = `accepted ${e.results.result === true ? 'aye' : 'nay'}`;
           v.accepted_glyph = `glyphicon glyphicon-${e.results.result === true ? 'ok' : 'remove'}`;
           v.percent_votes_for = Math.floor((v.results.votes_for / allInVotes) * 100);
@@ -332,13 +332,13 @@
         }
 
 
-        return `https://glej.uk.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+        return `http://glej.uk.parlameter.si/c/primerjalnik/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
     },
     mounted() {
       const self = this;
       const PGPromise = $.ajax({
-        url: 'https://data.uk.parlameter.si/v1/getAllPGs/',
+        url: 'http://data.uk.parlameter.si/v1/getAllPGs/',
         method: 'GET',
         success: (data) => {
           const sameParties = this.$options.cardData.parlaState.sameParties || [];
@@ -357,7 +357,7 @@
         },
       });
       const peoplePromise = $.ajax({
-        url: 'https://data.uk.parlameter.si/v1/getMPs/',
+        url: 'http://data.uk.parlameter.si/v1/getMPs/',
         method: 'GET',
         success: (data) => {
           const samePeople = this.$options.cardData.parlaState.samePeople || [];

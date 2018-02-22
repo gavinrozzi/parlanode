@@ -33,7 +33,7 @@ Za vsakega poslanca najdemo trenutno poslansko skupino in izračunamo odstotek u
       return { sessions: this.$options.cardData.data.result };
     },
     generatedCardUrl() {
-      return `https://glej.uk.parlameter.si/p/neujemanje-s-poslansko-skupino/${this.$options.cardData.data.person.id}?state={}`
+      return `http://glej.uk.parlameter.si/p/neujemanje-s-poslansko-skupino/${this.$options.cardData.data.person.id}?state={}`
     }
   },
   methods: {

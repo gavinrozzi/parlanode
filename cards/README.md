@@ -4,7 +4,7 @@
 This folder stores complete sources and information for certain cards that are developed using [Vue](//vuejs.org/) and rendered with [Vue SSR](//vuejs.org/v2/guide/ssr.html). Those sources are compiled into webpack bundles, which are in turn used to render cards using vue-server-renderer.
 
 ## File/folder organization
-Cards are stored in (sub)directories that correspond to their group/method in the API request. E.g. if the request is `https://glej.uk.parlameter.si/s/seznam-sej/`, all card files will be stored in the subfolder `s/seznam-sej`. That folder contains the following files:
+Cards are stored in (sub)directories that correspond to their group/method in the API request. E.g. if the request is `http://glej.uk.parlameter.si/s/seznam-sej/`, all card files will be stored in the subfolder `s/seznam-sej`. That folder contains the following files:
 
 - **card.json** - card metadata such as name, data source URL and time of last update.
 - **card.vue** - source code of the card, implemented as a Vue component (.vue is a [single file component](https://vuejs.org/v2/guide/single-file-components.html) format that stores the template, styling and logic in the same file)

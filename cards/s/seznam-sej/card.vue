@@ -180,7 +180,7 @@ export default {
       if (this.currentWorkingBodies.length > 0) params.workingBodies = this.currentWorkingBodies;
       if (this.justFive) params.justFive = true;
 
-      return `https://glej.uk.parlameter.si/s/seznam-sej/?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
+      return `http://glej.uk.parlameter.si/s/seznam-sej/?customUrl=${encodeURIComponent(this.$options.cardData.cardData.dataUrl)}${Object.keys(params).length > 0 ? `&state=${encodeURIComponent(JSON.stringify(params))}` : ''}`;
     },
     infoText() {
       const filterText = `${this.currentFilter}${this.currentWorkingBodies.length > 0 ? ': ' : ''}`;
@@ -198,7 +198,7 @@ export default {
     },
   },
   created() {
-    $.getJSON('https://analize.uk.parlameter.si/v1/s/getWorkingBodies/', (response) => {
+    $.getJSON('http://analize.uk.parlameter.si/v1/s/getWorkingBodies/', (response) => {
       const existingWorkingBodies = get(this.$options.cardData, 'state.workingBodies') || [];
       this.workingBodies = response.map(workingBody => ({
         id: workingBody.id,
@@ -226,7 +226,7 @@ export default {
       this.measurePiwik(filter, '', '');
     },
     getWorkingBodyUrl(workingBodyId) {
-      return `https://glej.uk.parlameter.si/wb/getWorkingBodies/${workingBodyId}?frame=true&altHeader=true`;
+      return `http://glej.uk.parlameter.si/wb/getWorkingBodies/${workingBodyId}?frame=true&altHeader=true`;
     },
     measurePiwik(filter, sort, order) {
       if (typeof measure !== 'function') return;

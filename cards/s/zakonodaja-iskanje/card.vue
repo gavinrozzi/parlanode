@@ -80,7 +80,7 @@
 
         const searchUrl = `https://isci.parlameter.si/l/${this.$options.cardData.data.responseHeader.params.q.split('content_t')[1].split(')')[0]}`;
 
-        return `https://glej.uk.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
+        return `http://glej.uk.parlameter.si/${this.$options.cardData.cardData.group}/${this.$options.cardData.cardData.method}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true&customUrl=${encodeURIComponent(searchUrl)}`;
       },
       mappedItems() {
         const mapResultIcon = {

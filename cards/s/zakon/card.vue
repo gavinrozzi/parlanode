@@ -38,7 +38,7 @@
       <p-tab label="Povzetek" variant="light">
         <excerpt
           :content="content"
-          :main-law="{ epa: data.epa || '', name: data.text || '', link: `https://parlameter.si/zakonodaja/${data.epa}` }"
+          :main-law="{ epa: data.epa || '', name: data.text || '', link: `http://uk.parlameter.si/zakonodaja/${data.epa}` }"
           :documents="documents"
           :show-parent="false"
           :icon="data.icon"
@@ -152,7 +152,7 @@ export default {
       return '';
     },
     generatedCardUrl() {
-      return `https://glej.uk.parlameter.si/s/zakon/?customUrl=${encodeURIComponent('https://analize.uk.parlameter.si/v1/s/getLegislation/' + this.data.epa)}&state=${encodeURIComponent(JSON.stringify({startTab: this.startTab}))}`;
+      return `http://glej.uk.parlameter.si/s/zakon/?customUrl=${encodeURIComponent('http://analize.uk.parlameter.si/v1/s/getLegislation/' + this.data.epa)}&state=${encodeURIComponent(JSON.stringify({startTab: this.startTab}))}`;
     },
   },
   methods: {

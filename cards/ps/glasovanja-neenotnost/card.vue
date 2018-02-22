@@ -45,7 +45,7 @@
     <div :class="['results', {'is-loading': loading }]">
       <template v-for="day in filteredVotingDays">
         <date-row v-if="selectedSort === 'date'" :date="day.date" />
-        <a target="_blank" :href="'https://glej.uk.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
+        <a target="_blank" :href="'http://glej.uk.parlameter.si/s/glasovanje/' + ballot.id_parladata + '?frame=true'" v-for="ballot in day.ballots" class="ballot">
           <div class="disunion">
             <div class="percentage">{{ Math.round(ballot.maximum) }} %</div>
             <div class="text">neenotnost</div>
@@ -265,7 +265,7 @@ export default {
     fetchVotesForGroup(acronym = 'DZ') {
       this.loading = true;
       const groupId = find(this.groups, { acronym }).id;
-      $.getJSON(`https://analize.uk.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
+      $.getJSON(`http://analize.uk.parlameter.si/v1/pg/getIntraDisunionOrg/${groupId}`, (response) => {
         if (this.allTags.length === 0) {
           this.allTags = response.all_tags.map(
             tag => ({ id: tag, label: tag, selected: false }),

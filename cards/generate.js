@@ -63,7 +63,7 @@ inquirer.prompt([
       }
       return true;
     },
-    default: 'https://analize.uk.parlameter.si/v1/',
+    default: 'http://analize.uk.parlameter.si/v1/',
   },
   {
     type: 'confirm',

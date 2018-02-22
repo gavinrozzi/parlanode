@@ -1,7 +1,7 @@
 {
   "_id": "p_clanstva",
   "name": "Članstva",
-  "dataUrl": "https://analize.uk.parlameter.si/v1/p/getMembershipsOfMember",
+  "dataUrl": "http://analize.uk.parlameter.si/v1/p/getMembershipsOfMember",
   "type": "poslanec",
   "lastUpdate": "2018-01-08T09:45:36.390Z",
   "method": "clanstva",

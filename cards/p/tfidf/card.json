@@ -1,7 +1,7 @@
 {
   "_id": "p_tfidf",
   "name": "Besede, ki jo/ga zaznamujejo",
-  "dataUrl": "https://analize.uk.parlameter.si/v1/p/getTFIDF",
+  "dataUrl": "http://analize.uk.parlameter.si/v1/p/getTFIDF",
   "type": "poslanec",
   "lastUpdate": "2018-01-09T14:17:01.165Z",
   "method": "tfidf",

@@ -220,7 +220,7 @@ exports.render = (req, res) => {
       new Pageres({
         delay: 2, filename: cardRenderDoc._id, selector, scale: 2, format: 'jpg',
       })
-        .src(`https://glej.uk.parlameter.si/card/${cardRenderDoc._id}`, ['480x320'], { crop: true })
+        .src(`http://glej.uk.parlameter.si/card/${cardRenderDoc._id}`, ['480x320'], { crop: true })
         .dest(CFG.cardCapturePath)
         .run()
         .then(() => {
@@ -259,7 +259,7 @@ exports.render = (req, res) => {
           const errMsg = {
             err,
             stack: err.stack || 'no stack',
-            url: `https://glej.uk.parlameter.si/card/${cardRenderDoc._id}`,
+            url: `http://glej.uk.parlameter.si/card/${cardRenderDoc._id}`,
           };
           rspns.status(400).send(errMsg);
         });

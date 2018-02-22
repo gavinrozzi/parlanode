@@ -110,7 +110,7 @@ export default {
       if (this.textFilter.length > 0) state.text = this.textFilter;
       if (this.selectedMPs.length > 0) state.mps = this.selectedMPs;
 
-      return `https://glej.uk.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+      return `http://glej.uk.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this[this.type].id}/?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
     },
     headerConfig() {
       let specifics;

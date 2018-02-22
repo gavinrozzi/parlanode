@@ -49,7 +49,7 @@
                 </p-tab>
             </p-tabs>
             <div class="legislation__all">
-                <a :href="`https://parlameter.si${slugs.legislationLink}`">VSA ZAKONODAJA</a>
+                <a :href="`http://uk.parlameter.si${slugs.legislationLink}`">VSA ZAKONODAJA</a>
             </div>
         </div>
 
@@ -98,7 +98,7 @@
     },
     computed: {
       generatedCardUrl() {
-        return `https://glej.uk.parlameter.si/c/izpostavljena-zakonodaja/?customUrl=${encodeURIComponent('https://analize.uk.parlameter.si/v1/s/getExposedLegislation/')}&state=${encodeURIComponent(JSON.stringify({selectedTab: this.selectedTab}))}`;
+        return `http://glej.uk.parlameter.si/c/izpostavljena-zakonodaja/?customUrl=${encodeURIComponent('http://analize.uk.parlameter.si/v1/s/getExposedLegislation/')}&state=${encodeURIComponent(JSON.stringify({selectedTab: this.selectedTab}))}`;
       },
     },
   };

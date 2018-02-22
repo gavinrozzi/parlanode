@@ -67,7 +67,7 @@ Caching is done for each first request to the card route. At that time cards get
 
 #### Example
 ```
-[GET] https://glej.uk.parlameter.si/p/izracunana-prisotnost/9/
+[GET] http://glej.uk.parlameter.si/p/izracunana-prisotnost/9/
 ```
 
 Each request checks for a corresponding entry in the database according to its full url. If no prerendered card is found it then fetches the data from parlalize and renders the card (the specifics of this process differ between ejs and Vue cards). It then stores the rendered card to `CardRender` collection in MongoDB with the url as `cardUrl` parameter.

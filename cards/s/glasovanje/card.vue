@@ -39,7 +39,7 @@
     <div class="izvlecek-switch visible-xs" @click="showMobileExcerpt = !showMobileExcerpt">Izvleček</div>
     <excerpt
       :content="data.abstract || ''"
-      :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
+      :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `http://uk.parlameter.si/zakonodaja/${data.legislation.epa}` }"
       :documents="data.documents"
       class="visible-xs"
       v-if="showMobileExcerpt"
@@ -79,7 +79,7 @@
       <p-tab label="Povzetek" variant="light">
         <excerpt
           :content="data.abstract || ''"
-          :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `https://parlameter.si/zakonodaja/${data.legislation.epa}` }"
+          :main-law="{ epa: data.legislation.epa || '', name: data.legislation.text, link: `http://uk.parlameter.si/zakonodaja/${data.legislation.epa}` }"
           :documents="data.documents"
           :show-parent="true"
         />
@@ -168,7 +168,7 @@ export default {
   },
   computed: {
     generatedCardUrl() {
-      return `https://glej.uk.parlameter.si/s/glasovanje/${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
+      return `http://glej.uk.parlameter.si/s/glasovanje/${this.data.id}?state=${encodeURIComponent(JSON.stringify(this.state))}`;
     },
   },
   methods: {

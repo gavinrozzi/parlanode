@@ -121,7 +121,7 @@
 
       let votes = this.$options.cardData.data.results.map(function (e) {
         var allInVotes = e.results.votes_for + e.results.against + e.results.abstain + e.results.not_present;
-        e.url = 'https://parlameter.si/seja/glasovanje/' + e.session.id + '/' + e.results.motion_id;
+        e.url = 'http://uk.parlameter.si/seja/glasovanje/' + e.session.id + '/' + e.results.motion_id;
         e.accepted = 'accepted ' + ((e.results.result === true) ? 'aye' : 'nay');
         e.accepted_glyph = 'glyphicon ' + ((e.results.result === true) ? 'glyphicon-ok' : 'glyphicon-remove');
         e.percent_votes_for = Math.floor(e.results.votes_for / allInVotes * 100);
@@ -196,7 +196,7 @@
         if (this.textFilter.length > 0) state.text = this.textFilter;
         if (this.selectedResults.length > 0) state.results = this.selectedResults;
 
-        return `https://glej.uk.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.session.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
+        return `http://glej.uk.parlameter.si/${this.cardGroup}/${this.cardMethod}/${this.data.session.id}?state=${encodeURIComponent(JSON.stringify(state))}&altHeader=true`;
       },
       filteredVotes() {
         return this.getFilteredVotes();
