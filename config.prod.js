@@ -8,10 +8,10 @@ module.exports = {
     password: `${process.env.MONGO_PASSWORD}`,
   },
   urls            : {
-    analize : 'https://analize.parlameter.si', // DATA URL BASE
+    analize : 'https://analize.uk.parlameter.si', // DATA URL BASE
   },
   apiPrefix       : '/api',
-  ogCapturePath   : '/home/parladaddy/parlacdn/v1/parlassets/og_cards',
-  ogRootUrl       : 'https://cdn.parlameter.si/v1/parlassets/og_cards/', // root url for OG images
-  cardCapturePath : '/home/parladaddy/parlacdn/v1/parlassets/card_captures', // where cards are stored
+  ogCapturePath   : '/home/parlauser/parlassets/og_cards',
+  ogRootUrl       : 'http://cdn.uk.parlameter.si/og_cards/', // root url for OG images
+  cardCapturePath : '/home/parlauser/card_captures', // where cards are stored
 };
