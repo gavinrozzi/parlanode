@@ -44,7 +44,7 @@ export default {
         return this.processedMembers.map(member => [
           { link: getMemberLink(member), image: getMemberPortrait(member) },
           { link: getMemberLink(member), text: member.person.name },
-          member.age,
+          member.age || '',
           arabicToRoman(member.education),
           member.terms,
           { link: member.partylink ? getMemberPartyLink(member) : '', text: member.person.party.acronym },
