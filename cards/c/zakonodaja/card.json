@@ -3,7 +3,7 @@
   "name": "Seznam zakonodaje",
   "dataUrl": "http://analize.uk.parlameter.si/v1/s/getAllLegislation",
   "type": "empty",
-  "lastUpdate": "2018-02-22T11:25:00.463Z",
+  "lastUpdate": "2018-03-05T11:05:16.474Z",
   "method": "zakonodaja",
   "group": "c",
   "big": true,

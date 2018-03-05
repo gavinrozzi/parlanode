@@ -3,7 +3,7 @@
   "name": "Zakon",
   "type": "empty",
   "dataUrl": "http://analize.uk.parlameter.si/v1/s/getLegislation/",
-  "lastUpdate": "2018-02-22T11:24:51.482Z",
+  "lastUpdate": "2018-03-05T11:05:08.407Z",
   "method": "zakon",
   "group": "s",
   "big": true,
